@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget
+    id="stoneworx.mendixreacttrend.MendixReactTrend"
+    pluginWidget="true"
+    needsEntityContext="true"
+    offlineCapable="true"
+    supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd"
+>
+    <name>Mendix React Trend</name>
+    <description>Mendix React Trend Pluggable Widget. Based on https://github.com/unsplash/react-trend.</description>
+    <icon />
+    <properties>
+        <propertyGroup caption="General">
+            <property key="trendList" type="datasource" isList="true">
+                <caption>Trend List</caption>
+                <description />
+            </property>
+            <property key="trendValue" type="attribute" dataSource="trendList">
+                <caption>Trend Value</caption>
+                <description />
+                <attributeTypes>
+                    <attributeType name="Decimal" />
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>
