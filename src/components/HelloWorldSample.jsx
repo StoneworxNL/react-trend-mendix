@@ -1,7 +1,7 @@
 import { createElement, useEffect, useState } from "react";
 import Trend from 'react-trend';
 
-export function HelloWorldSample({ trendList, trendValue }) {
+export function HelloWorldSample({ trendList, trendValue, gradientObject }) {
 
     const [trendDataUS, setTrendDataUS] = useState([]);
 
@@ -20,10 +20,11 @@ export function HelloWorldSample({ trendList, trendValue }) {
             autoDrawDuration={3000}
             autoDrawEasing="ease-out"
             data={trendDataUS}
-            gradient={['#00c6ff', '#F0F', '#FF0']}
+            gradient={gradientObject.map((item) => {return item.color})}
             radius={6.8}
             strokeWidth={2}
             strokeLinecap={'square'}
-            />
+        />
+
     return <div>Loading...</div>
 }

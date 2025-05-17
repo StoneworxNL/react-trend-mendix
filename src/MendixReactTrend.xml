@@ -31,8 +31,8 @@
                 <properties>
                     <propertyGroup caption="Color(s)">
                         <property key="color" type="string" defaultValue="true">
-                            <caption>(Hex)</caption>
-                            <description>Color Hexadecimal</description>
+                            <caption>Value</caption>
+                            <description></description>
                         </property>
                     </propertyGroup>
                 </properties>
