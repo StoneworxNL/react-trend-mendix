@@ -25,6 +25,18 @@
                     <attributeType name="Decimal" />
                 </attributeTypes>
             </property>
+            <property key="gradientObject" type="object" isList="true">
+                <caption>Gradient</caption>
+                <description />
+                <properties>
+                    <propertyGroup caption="Color(s)">
+                        <property key="color" type="string" defaultValue="true">
+                            <caption>(Hex)</caption>
+                            <description>Color Hexadecimal</description>
+                        </property>
+                    </propertyGroup>
+                </properties>
+            </property>
         </propertyGroup>
     </properties>
 </widget>
