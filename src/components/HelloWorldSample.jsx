@@ -6,7 +6,6 @@ export function HelloWorldSample({ trendList, trendValue, gradientObject }) {
     const [trendDataUS, setTrendDataUS] = useState([]);
 
     useEffect(() => {
-        debugger;
         if  (trendList && trendList.status === 'available' && trendList.items)
             setTrendDataUS(trendList.items.map((item) => {
                 return parseInt(trendValue.get(item).displayValue);
@@ -26,5 +25,5 @@ export function HelloWorldSample({ trendList, trendValue, gradientObject }) {
             strokeLinecap={'square'}
         />
 
-    return <div>Loading...</div>
+    return <div></div>
 }
