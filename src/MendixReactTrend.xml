@@ -37,16 +37,12 @@
                     </propertyGroup>
                 </properties>
             </property>
-            <property key="height" type="integer">
+            <property key="height" type="integer" default="20">
                 <caption>Height</caption>
                 <description>Set an explicit height for your SVG. By default it ensures a 1:4 aspect ratio with the width, and the width expands to fill the container. Note that in most cases it is sufficient to leave this blank, and just control the size of the parent container.</description>
             </property>
             <property key="padding" type="integer" default="8">
                 <caption>Padding</caption>
-                <description>If you set a very large strokeWidth on your line, you may notice that it gets "cropped" towards the edges. This is because SVGs don't support overflow. By increasing this number, you expand the space around the line, so that very thick lines aren't cropped. In most cases you don't need to touch this value.</description>
-            </property>
-            <property key="radius" type="integer" default="8">
-                <caption>Radius</caption>
                 <description>If you set a very large strokeWidth on your line, you may notice that it gets "cropped" towards the edges. This is because SVGs don't support overflow. By increasing this number, you expand the space around the line, so that very thick lines aren't cropped. In most cases you don't need to touch this value.</description>
             </property>
         </propertyGroup>
