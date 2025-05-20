@@ -37,11 +37,11 @@
                     </propertyGroup>
                 </properties>
             </property>
-            <property key="height" type="integer" default="20">
+            <property key="height" type="integer" defaultValue="0">
                 <caption>Height</caption>
                 <description>Set an explicit height for your SVG. By default it ensures a 1:4 aspect ratio with the width, and the width expands to fill the container. Note that in most cases it is sufficient to leave this blank, and just control the size of the parent container.</description>
             </property>
-            <property key="padding" type="integer" default="8">
+            <property key="padding" type="integer" defaultValue="8">
                 <caption>Padding</caption>
                 <description>If you set a very large strokeWidth on your line, you may notice that it gets "cropped" towards the edges. This is because SVGs don't support overflow. By increasing this number, you expand the space around the line, so that very thick lines aren't cropped. In most cases you don't need to touch this value.</description>
             </property>
@@ -60,15 +60,30 @@
                 <description>The easing function to use for the autoDraw animation. Accepts any transition timing function within the CSS spec (eg. linear, ease, ease-in, cubic-bezier...).</description>
             </property>
         </propertyGroup>
-        <propertyGroup caption="Smoothing">
-            <property key="smoothing" type="boolean" default="false">
+        <propertyGroup caption="Stroke/Smoothing">
+            <property key="strokeWidth" type="decimal" defaultValue="1.1">
+                <caption>Stroke Width</caption>
+                <description>To change the default line thickness.</description>
+            </property>
+            <property key="strokeLineCap" type="enumeration" defaultValue="butt">
+                <caption>Stroke Width</caption>
+                <description>To control the edges of your line.</description>
+                <enumerationValues>
+                    <enumerationValue key="butt">butt</enumerationValue>
+                    <enumerationValue key="round">round</enumerationValue>
+                    <enumerationValue key="square">square</enumerationValue>
+                </enumerationValues>
+            </property>
+            <property key="smoothing" type="boolean" defaultValue="false">
                 <caption>Enable</caption>
                 <description>Smooth allows the peaks to be 'rounded' out so that the line has no jagged edges. By tweaking the radius prop, you can use this as a subtle prop to tone down the sharpness, or you can set a very high radius to create a snake-like line.</description>
             </property>
-            <property key="radius" type="integer" default="8">
+            <property key="radius" type="integer" defaultValue="8">
                 <caption>Radius</caption>
                 <description>When using smoothing, you may wish to control the amount of curve around each point. For example, a 0 radius is equivalent to not having any smoothing at all, where an impossibly-large number like 10000 will ensure that each peak is as curved as it can possibly be. This prop has no effect if smooth isn't set to true.</description>
             </property>
         </propertyGroup>
     </properties>
 </widget>
+
+

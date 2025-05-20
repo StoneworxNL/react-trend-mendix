@@ -1,7 +1,7 @@
 import { createElement, useEffect, useState } from "react";
 import Trend from 'react-trend';
 
-export function HelloWorldSample({ trendList, trendValue, gradientObject, autoDraw, autoDrawDuration, autoDrawEasing, smooth, radius, padding, height, strokeWidth, strokeLineCap }) {
+export function HelloWorldSample({ trendList, trendValue, gradientObject, autoDraw_, autoDrawDuration_, autoDrawEasing_, smooth_, radius_, padding_, height_, strokeWidth_, strokeLineCap_ }) {
 
     const [trendDataUS, setTrendDataUS] = useState([]);
 
@@ -14,19 +14,17 @@ export function HelloWorldSample({ trendList, trendValue, gradientObject, autoDr
 
     if  (trendDataUS && trendDataUS.length > 0)
         return <Trend
-            {...(smooth && { smooth: true })}      
-            {...(autoDraw && { 
-                autoDraw: true, 
-                autoDrawDuration: autoDrawDuration, 
-                autoDrawEasing: autoDrawEasing 
-            })}
+            smooth={smooth_}
+            radius={radius_}    
+            autoDraw={autoDraw_} 
+            autoDrawDuration={autoDrawDuration_} 
+            autoDrawEasing={autoDrawEasing_}
             data={trendDataUS}
             gradient={gradientObject.map((item) => {return item.color})}
-            radius={radius}
-            strokeWidth={strokeWidth}
-            strokeLinecap={strokeLineCap}
-            padding={padding}
-            height={height}
+            strokeWidth={strokeWidth_}
+            strokeLinecap={strokeLineCap_}
+            padding={padding_}
+            height={height_}
         />
 
     return <div></div>
