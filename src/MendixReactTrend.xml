@@ -66,7 +66,7 @@
                 <description>To change the default line thickness.</description>
             </property>
             <property key="strokeLineCap" type="enumeration" defaultValue="butt">
-                <caption>Stroke Width</caption>
+                <caption>Stroke Line Cap</caption>
                 <description>To control the edges of your line.</description>
                 <enumerationValues>
                     <enumerationValue key="butt">butt</enumerationValue>
