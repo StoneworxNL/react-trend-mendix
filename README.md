@@ -1,4 +1,4 @@
-## Data Spreadsheet Mendix Pluggable Widget
+## Trend Chart Mendix Pluggable Widget
 A Mendix widget to show trend charts based on https://github.com/unsplash/react-trend. 
 
 <img alt="Toolbox Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/logo.png" width="50px"/>
