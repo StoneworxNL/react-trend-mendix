@@ -24,7 +24,9 @@ Easily show trending charts. Custom settings include:
 ### Configuration Screenshots
 <img alt="Toolbox Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/toolbox.png" width="150px"/>
 <img alt="Page Setup Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/pagesetup.png" width="300px"/>
+
 ![Studio Pro Screenshot](https://github.com/joaodelopes/mendix-react-trend/blob/main/images/studiopro1.png)
+
 <img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/configgeneral.png" width="500px"/>
 <img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/strokesmoothing.png" width="500px"/>
 <img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/autodraw.png" width="500px"/>
