@@ -22,20 +22,24 @@ Easily show trending charts. Custom settings include:
 3. Custumize it.
 
 ### Configuration Screenshots
+
+#### Toolbox
 <img alt="Toolbox Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/toolbox.png" width="150px"/>
+
+#### Page Seup
 <img alt="Page Setup Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/pagesetup.png" width="300px"/>
 
+#### Studio Pro
 ![Studio Pro Screenshot](https://github.com/joaodelopes/mendix-react-trend/blob/main/images/studiopro1.png)
 
-<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/configgeneral.png" width="500px"/>
-<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/strokesmoothing.png" width="500px"/>
-<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/autodraw.png" width="500px"/>
+#### Widget's General Settings
+<img alt="Widget's General Settings" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/configgeneral.png" width="500px"/>
 
-<!-- ![Usage in Mendix Studio Pro (General)](https://github.com/joaodelopes/data-spreadsheet-mendix/blob/main/images/studiopro0.png)
+#### Widget's Auto-Draw Settings
+<img alt="Widget's Auto-Draw Settings" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/autodraw.png" width="500px"/>
 
-### Export Settings
-![Usage in Mendix Studio Pro (Export Settings)](https://github.com/joaodelopes/data-spreadsheet-mendix/blob/main/images/studiopro1.png) -->
-
+#### Widget's Stroke/Smoothing Settings
+<img alt="Widget's Stroke/Smoothing Settings" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/strokesmoothing.png" width="500px"/>
 
 ## Demo project
 - [Mendix app running on the cloud](https://reacttrend-sandbox.mxapps.io/index.html)
