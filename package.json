@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Mendix React Trend Pluggable Widget. Based on https://github.com/unsplash/react-trend.",
   "copyright": "MIT",
-  "author": "Stoneworx",
+  "author": "Copyright 2025 JL",
   "engines": {
     "node": ">=16"
   },

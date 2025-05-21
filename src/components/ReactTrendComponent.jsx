@@ -1,7 +1,7 @@
 import { createElement, useEffect, useState } from "react";
 import Trend from 'react-trend';
 
-export function HelloWorldSample({ trendList, trendValue, gradientObject, autoDraw, autoDrawDuration, autoDrawEasing, smooth, radius, padding, height, strokeWidth, strokeLineCap }) {
+export function ReactTrendComponent({ trendList, trendValue, gradientObject, autoDraw, autoDrawDuration, autoDrawEasing, smooth, radius, padding, height, strokeWidth, strokeLineCap }) {
 
     const [trendDataUS, setTrendDataUS] = useState([]);
 
