@@ -62,11 +62,11 @@
         </propertyGroup>
         <propertyGroup caption="Stroke/Smoothing">
             <property key="strokeWidth" type="decimal" defaultValue="1.1">
-                <caption>Stroke Width</caption>
+                <caption>Stroke</caption>
                 <description>To change the default line thickness.</description>
             </property>
             <property key="strokeLineCap" type="enumeration" defaultValue="butt">
-                <caption>Stroke Line Cap</caption>
+                <caption>Line Cap</caption>
                 <description>To control the edges of your line.</description>
                 <enumerationValues>
                     <enumerationValue key="butt">butt</enumerationValue>
@@ -75,7 +75,7 @@
                 </enumerationValues>
             </property>
             <property key="smooth" type="boolean" defaultValue="false">
-                <caption>Enable</caption>
+                <caption>Smooth</caption>
                 <description>Smooth allows the peaks to be 'rounded' out so that the line has no jagged edges. By tweaking the radius prop, you can use this as a subtle prop to tone down the sharpness, or you can set a very high radius to create a snake-like line.</description>
             </property>
             <property key="radius" type="integer" defaultValue="8">
