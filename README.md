@@ -21,16 +21,25 @@ Easily show trending charts. Custom settings include:
 2. Inside the dataview, add the Trend widget.
 3. Custumize it.
 
-### General Settings
-![Usage in Mendix Studio Pro (General)](https://github.com/joaodelopes/data-spreadsheet-mendix/blob/main/images/studiopro0.png)
+### Configuration Screenshots
+<img alt="Toolbox Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/toolbox.png" width="50px"/>
+<img alt="Page Setup Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/pagesetup.png" width="500px"/>
+<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/studiopro1.png" width="500px"/>
+<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/configgeneral.png" width="300px"/>
+<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/strokesmoothing.png" width="300px"/>
+<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/autodraw.png" width="300px"/>
+
+<!-- ![Usage in Mendix Studio Pro (General)](https://github.com/joaodelopes/data-spreadsheet-mendix/blob/main/images/studiopro0.png)
 
 ### Export Settings
-![Usage in Mendix Studio Pro (Export Settings)](https://github.com/joaodelopes/data-spreadsheet-mendix/blob/main/images/studiopro1.png)
+![Usage in Mendix Studio Pro (Export Settings)](https://github.com/joaodelopes/data-spreadsheet-mendix/blob/main/images/studiopro1.png) -->
 
 
 ## Demo project
 - [Mendix app running on the cloud](https://reacttrend-sandbox.mxapps.io/index.html)
 - [Mendix demo module (.mpk)](https://github.com/joaodelopes/mendix-react-trend/tree/main/demo)
+
+![Trend Demo](https://github.com/joaodelopes/mendix-react-trend/blob/main/images/app.png)
 <!-- - [Marketplace widget](https://marketplace.mendix.com/link/component/237438) -->
 <!-- - [Mendix demo scss (.scss)](https://github.com/joaodelopes/block-note-mendix/blob/main/demo/demo.scss) -->
 
