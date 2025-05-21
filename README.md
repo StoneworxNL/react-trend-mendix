@@ -1,7 +1,7 @@
 ## Data Spreadsheet Mendix Pluggable Widget
 A Mendix widget to show trend charts based on https://github.com/unsplash/react-trend. 
 
-<img alt="Mendix Pluggable Widget Data Spreadsheet Logo" src="https://github.com/joaodelopes/data-spreadsheet-mendix/blob/main/images/logo.png" width="65px"/>
+<img alt="Toolbox Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/logo.png" width="50px"/>
 
 Quoting the [Unsplash's README](https://github.com/unsplash/react-trend?tab=readme-ov-file#react-trend), "Graphing tools are often complex, abstract, and heavy. They require domain-specific knowledge, and a significant time investment. But what if you just need a spark line that shows a trend? (...) These are very simple and elegant visualizations, and they should not require a bloated graphing library to produce."
 
@@ -22,12 +22,12 @@ Easily show trending charts. Custom settings include:
 3. Custumize it.
 
 ### Configuration Screenshots
-<img alt="Toolbox Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/toolbox.png" width="50px"/>
-<img alt="Page Setup Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/pagesetup.png" width="500px"/>
-<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/studiopro1.png" width="500px"/>
-<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/configgeneral.png" width="300px"/>
-<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/strokesmoothing.png" width="300px"/>
-<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/autodraw.png" width="300px"/>
+<img alt="Toolbox Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/toolbox.png" width="150px"/>
+<img alt="Page Setup Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/pagesetup.png" width="300px"/>
+![Studio Pro Screenshot](https://github.com/joaodelopes/mendix-react-trend/blob/main/images/studiopro1.png)
+<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/configgeneral.png" width="500px"/>
+<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/strokesmoothing.png" width="500px"/>
+<img alt="Studio Pro" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/autodraw.png" width="500px"/>
 
 <!-- ![Usage in Mendix Studio Pro (General)](https://github.com/joaodelopes/data-spreadsheet-mendix/blob/main/images/studiopro0.png)
 
