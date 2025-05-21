@@ -30,7 +30,7 @@ Easily show trending charts. Custom settings include:
 <img alt="Page Setup Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/pagesetup.png" width="300px"/>
 
 #### Domain Model (Demo)
-<img alt="Domain Model Demo" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/domainmodel.png" width="300px"/>
+<img alt="Domain Model Demo" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/domainmodel.png" width="400px"/>
 
 #### Studio Pro
 ![Studio Pro Screenshot](https://github.com/joaodelopes/mendix-react-trend/blob/main/images/studiopro1.png)
