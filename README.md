@@ -17,7 +17,7 @@ Easily show trending charts. Custom settings include:
 
 
 ## Usage
-1. Add a dataview that returns an objec (root) associated with a list of objects (that contain the trend values).
+1. Add a dataview that returns an object (root) associated with a list of objects (that contain the trend values).
 2. Inside the dataview, add the Trend widget.
 3. Custumize it.
 
