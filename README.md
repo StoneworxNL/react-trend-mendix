@@ -26,7 +26,7 @@ Easily show trending charts. Custom settings include:
 #### Toolbox
 <img alt="Toolbox Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/toolbox.png" width="150px"/>
 
-#### Page Seup
+#### Page Setup
 <img alt="Page Setup Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/pagesetup.png" width="300px"/>
 
 #### Studio Pro
@@ -41,7 +41,7 @@ Easily show trending charts. Custom settings include:
 #### Widget's Stroke/Smoothing Settings
 <img alt="Widget's Stroke/Smoothing Settings" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/strokesmoothing.png" width="500px"/>
 
-## Demo project
+## Demo Project
 - [Mendix app running on the cloud](https://reacttrend-sandbox.mxapps.io/index.html)
 - [Mendix demo module (.mpk)](https://github.com/joaodelopes/mendix-react-trend/tree/main/demo)
 
@@ -49,7 +49,7 @@ Easily show trending charts. Custom settings include:
 <!-- - [Marketplace widget](https://marketplace.mendix.com/link/component/237438) -->
 <!-- - [Mendix demo scss (.scss)](https://github.com/joaodelopes/block-note-mendix/blob/main/demo/demo.scss) -->
 
-## Issues, suggestions and feature requests
+## Issues, Suggestions and Feature Requests
 
 *   No known issues at the moment. If you have improvement suggestions, feel free to contact us.
 
