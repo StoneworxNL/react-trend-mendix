@@ -17,7 +17,7 @@ Easily show trending charts. Custom settings include:
 
 
 ## Usage
-Feel free to check the [demo (.mpk)](https://github.com/joaodelopes/mendix-react-trend/tree/main/demo) for a better understanding.
+Feel free to check the [demo (.mpk)](https://github.com/StoneworxNL/mendix-react-trend/tree/main/demo) for a better understanding.
 
 1. Add a dataview that returns an object (root) associated with a list of objects (that contain the trend values).
 2. Inside the dataview, add the Trend widget.
@@ -29,40 +29,31 @@ Feel free to check the [demo (.mpk)](https://github.com/joaodelopes/mendix-react
 <img alt="Toolbox Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/toolbox.png" width="150px"/>
 
 #### Page Setup
-<img alt="Page Setup Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/pagesetup.png" width="300px"/>
+<img alt="Page Setup Screenshot" src="https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/pagesetup.png" width="300px"/>
 
 #### Domain Model (Demo)
-<img alt="Domain Model Demo" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/domainmodel.png" width="400px"/>
+<img alt="Domain Model Demo" src="https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/domainmodel.png" width="400px"/>
 
 #### Studio Pro
-![Studio Pro Screenshot](https://github.com/joaodelopes/mendix-react-trend/blob/main/images/studiopro1.png)
+![Studio Pro Screenshot](https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/studiopro1.png)
 
 #### Widget's General Settings
-<img alt="Widget's General Settings" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/configgeneral.png" width="500px"/>
+<img alt="Widget's General Settings" src="https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/configgeneral.png" width="500px"/>
 
 #### Widget's Auto-Draw Settings
-<img alt="Widget's Auto-Draw Settings" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/autodraw.png" width="500px"/>
+<img alt="Widget's Auto-Draw Settings" src="https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/autodraw.png" width="500px"/>
 
 #### Widget's Stroke/Smoothing Settings
-<img alt="Widget's Stroke/Smoothing Settings" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/strokesmoothing.png" width="500px"/>
+<img alt="Widget's Stroke/Smoothing Settings" src="https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/strokesmoothing.png" width="500px"/>
 
 ## Demo Project
 - [Mendix app running on the cloud](https://reacttrend-sandbox.mxapps.io/index.html)
-- [Mendix demo module (.mpk)](https://github.com/joaodelopes/mendix-react-trend/tree/main/demo)
+- [Mendix demo module (.mpk)](https://github.com/StoneworxNL/mendix-react-trend/tree/main/demo)
 
-![Trend Demo](https://github.com/joaodelopes/mendix-react-trend/blob/main/images/app.png)
+![Trend Demo](https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/app.png)
 <!-- - [Marketplace widget](https://marketplace.mendix.com/link/component/237438) -->
-<!-- - [Mendix demo scss (.scss)](https://github.com/joaodelopes/block-note-mendix/blob/main/demo/demo.scss) -->
+<!-- - [Mendix demo scss (.scss)](https://github.com/StoneworxNL/block-note-mendix/blob/main/demo/demo.scss) -->
 
 ## Issues, Suggestions and Feature Requests
 
 *   No known issues at the moment. If you have improvement suggestions, feel free to contact us.
-
-
-## About Stoneworx
-
-<img alt="From https://www.stoneworx.nl/o" src="https://cdn.prod.website-files.com/66991b9fc069c88aec093fd1/66b242753e65840128c97ab9_imagehero-p-800.png" width="50px"/>
-
-We started our company as friends and will always remain a club of people that likes doing business in a friendly matter. A group of entrepreneurial, smart and highly experienced Mendix professionals.  
-
-On a daily basis, we create software applications that simplify our clients’ business processes by using the Mendix low code platform. It is our mission is to turn complex ideas into simple solutions for medium to corporate-sized businesses, in any industry.
