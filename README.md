@@ -1,7 +1,7 @@
 ## Trend Chart Mendix Pluggable Widget
 A Mendix widget to show trend charts based on https://github.com/unsplash/react-trend. 
 
-<img alt="Toolbox Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/logo.png" width="50px"/>
+<img alt="Toolbox Screenshot" src="https://github.com/StoneworxNL/react-trend-mendix/blob/main/images/logo.png" width="50px"/>
 
 Quoting the [Unsplash's README](https://github.com/unsplash/react-trend?tab=readme-ov-file#react-trend), "Graphing tools are often complex, abstract, and heavy. They require domain-specific knowledge, and a significant time investment. But what if you just need a spark line that shows a trend? (...) These are very simple and elegant visualizations, and they should not require a bloated graphing library to produce."
 
@@ -26,31 +26,31 @@ Feel free to check the [demo (.mpk)](https://github.com/StoneworxNL/mendix-react
 ### Configuration Screenshots
 
 #### Toolbox
-<img alt="Toolbox Screenshot" src="https://github.com/joaodelopes/mendix-react-trend/blob/main/images/toolbox.png" width="150px"/>
+<img alt="Toolbox Screenshot" src="https://github.com/StoneworxNL/react-trend-mendix/blob/main/images/toolbox.png" width="150px"/>
 
 #### Page Setup
-<img alt="Page Setup Screenshot" src="https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/pagesetup.png" width="300px"/>
+<img alt="Page Setup Screenshot" src="https://github.com/StoneworxNL/react-trend-mendix/blob/main/images/pagesetup.png" width="300px"/>
 
 #### Domain Model (Demo)
-<img alt="Domain Model Demo" src="https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/domainmodel.png" width="400px"/>
+<img alt="Domain Model Demo" src="https://github.com/StoneworxNL/react-trend-mendix/blob/main/images/domainmodel.png" width="400px"/>
 
 #### Studio Pro
-![Studio Pro Screenshot](https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/studiopro1.png)
+![Studio Pro Screenshot](https://github.com/StoneworxNL/react-trend-mendix/blob/main/images/studiopro1.png)
 
 #### Widget's General Settings
-<img alt="Widget's General Settings" src="https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/configgeneral.png" width="500px"/>
+<img alt="Widget's General Settings" src="https://github.com/StoneworxNL/react-trend-mendix/blob/main/images/configgeneral.png" width="500px"/>
 
 #### Widget's Auto-Draw Settings
-<img alt="Widget's Auto-Draw Settings" src="https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/autodraw.png" width="500px"/>
+<img alt="Widget's Auto-Draw Settings" src="https://github.com/StoneworxNL/react-trend-mendix/blob/main/images/autodraw.png" width="500px"/>
 
 #### Widget's Stroke/Smoothing Settings
-<img alt="Widget's Stroke/Smoothing Settings" src="https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/strokesmoothing.png" width="500px"/>
+<img alt="Widget's Stroke/Smoothing Settings" src="https://github.com/StoneworxNL/react-trend-mendix/blob/main/images/strokesmoothing.png" width="500px"/>
 
 ## Demo Project
 - [Mendix app running on the cloud](https://reacttrend-sandbox.mxapps.io/index.html)
-- [Mendix demo module (.mpk)](https://github.com/StoneworxNL/mendix-react-trend/tree/main/demo)
+- [Mendix demo module (.mpk)](https://github.com/StoneworxNL/react-trend-mendix/tree/main/demo)
 
-![Trend Demo](https://github.com/StoneworxNL/mendix-react-trend/blob/main/images/app.png)
+![Trend Demo](https://github.com/StoneworxNL/react-trend-mendix/blob/main/images/app.png)
 <!-- - [Marketplace widget](https://marketplace.mendix.com/link/component/237438) -->
 <!-- - [Mendix demo scss (.scss)](https://github.com/StoneworxNL/block-note-mendix/blob/main/demo/demo.scss) -->
 
