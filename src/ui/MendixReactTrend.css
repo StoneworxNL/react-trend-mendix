@@ -1,6 +1,10 @@
-/*
-Place your custom CSS here
-*/
-/* .widget-hello-world {
+.widget-react-trend {
+    display: block;
+    width: 100%;
+    line-height: 0;
+}
 
-} */
+.widget-react-trend svg {
+    display: block;
+    overflow: visible;
+}
