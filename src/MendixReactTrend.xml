@@ -2,7 +2,7 @@
 <widget
     id="stoneworx.mendixreacttrend.MendixReactTrend"
     pluginWidget="true"
-    needsEntityContext="true"
+    needsEntityContext="false"
     offlineCapable="true"
     supportedPlatform="Web"
     xmlns="http://www.mendix.com/widget/1.0/"
@@ -11,79 +11,128 @@
 >
     <name>Mendix React Trend</name>
     <description>Mendix React Trend Pluggable Widget. Based on https://github.com/unsplash/react-trend.</description>
-    <icon />
+    <studioProCategory>Charts</studioProCategory>
     <properties>
         <propertyGroup caption="General">
-            <property key="trendList" type="datasource" isList="true">
-                <caption>Trend List</caption>
-                <description />
-            </property>
-            <property key="trendValue" type="attribute" dataSource="trendList">
-                <caption>Trend Value</caption>
-                <description />
-                <attributeTypes>
-                    <attributeType name="Decimal" />
-                </attributeTypes>
-            </property>
-            <property key="gradientObject" type="object" isList="true">
-                <caption>Gradient</caption>
-                <description />
-                <properties>
-                    <propertyGroup caption="Color(s)">
-                        <property key="color" type="string" defaultValue="true">
-                            <caption>Value</caption>
-                            <description></description>
-                        </property>
-                    </propertyGroup>
-                </properties>
-            </property>
-            <property key="height" type="integer" defaultValue="0">
-                <caption>Height</caption>
-                <description>Set an explicit height for your SVG. By default it ensures a 1:4 aspect ratio with the width, and the width expands to fill the container. Note that in most cases it is sufficient to leave this blank, and just control the size of the parent container.</description>
-            </property>
-            <property key="padding" type="integer" defaultValue="8">
-                <caption>Padding</caption>
-                <description>If you set a very large strokeWidth on your line, you may notice that it gets "cropped" towards the edges. This is because SVGs don't support overflow. By increasing this number, you expand the space around the line, so that very thick lines aren't cropped. In most cases you don't need to touch this value.</description>
-            </property>
+            <propertyGroup caption="Data">
+                <property key="trendList" type="datasource" isList="true">
+                    <caption>Trend list</caption>
+                    <description>The list of objects that hold the points of the line, in order.</description>
+                </property>
+                <property key="trendValue" type="attribute" dataSource="trendList">
+                    <caption>Trend value</caption>
+                    <description>The value of each point. Empty values are skipped. At least two points are needed to draw a line.</description>
+                    <attributeTypes>
+                        <attributeType name="Decimal" />
+                        <attributeType name="Integer" />
+                        <attributeType name="Long" />
+                    </attributeTypes>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Color">
+                <property key="stroke" type="string" required="false" defaultValue="">
+                    <caption>Line color</caption>
+                    <description>Solid color of the line (any CSS color, for example #007693, rgb(0, 118, 147) or var(--brand-primary)). Leave empty to use the current text color. Ignored when a gradient is set.</description>
+                </property>
+                <property key="gradientObject" type="object" isList="true" required="false">
+                    <caption>Gradient</caption>
+                    <description>Two or more colors to draw the line with a vertical gradient. The first color is at the bottom of the chart, the last at the top.</description>
+                    <properties>
+                        <propertyGroup caption="Color">
+                            <property key="color" type="string" required="true">
+                                <caption>Color</caption>
+                                <description>Any CSS color, for example #00c6ff or purple.</description>
+                            </property>
+                        </propertyGroup>
+                    </properties>
+                </property>
+                <property key="strokeOpacity" type="decimal" defaultValue="1">
+                    <caption>Opacity</caption>
+                    <description>Opacity of the line, from 0 (transparent) to 1 (solid).</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Size">
+                <property key="width" type="integer" defaultValue="0">
+                    <caption>Width (px)</caption>
+                    <description>Set an explicit width for the SVG. Leave at 0 to fill the width of the parent container.</description>
+                </property>
+                <property key="height" type="integer" defaultValue="0">
+                    <caption>Height (px)</caption>
+                    <description>Set an explicit height for the SVG. Leave at 0 to keep a 1:4 aspect ratio with the width. In most cases it is enough to control the size of the parent container.</description>
+                </property>
+                <property key="padding" type="integer" defaultValue="8">
+                    <caption>Padding</caption>
+                    <description>Space around the line, so very thick lines are not cropped at the edges of the SVG.</description>
+                </property>
+            </propertyGroup>
         </propertyGroup>
-        <propertyGroup caption="Auto Draw">
-            <property key="autoDraw" type="boolean" defaultValue="false">
-                <caption>Enable</caption>
-                <description>Allow the line to draw itself on mount.</description>
-            </property>
-            <property key="autoDrawDuration" type="integer" defaultValue="2000">
-                <caption>Duration (ms)</caption>
-                <description>The amount of time that the autoDraw animation should span.</description>
-            </property>
-            <property key="autoDrawEasing" type="string" defaultValue="ease">
-                <caption>Easing</caption>
-                <description>The easing function to use for the autoDraw animation. Accepts any transition timing function within the CSS spec (eg. linear, ease, ease-in, cubic-bezier...).</description>
-            </property>
+        <propertyGroup caption="Auto draw">
+            <propertyGroup caption="Auto draw">
+                <property key="autoDraw" type="boolean" defaultValue="false">
+                    <caption>Enable</caption>
+                    <description>Let the line draw itself when it appears.</description>
+                </property>
+                <property key="autoDrawDuration" type="integer" defaultValue="2000">
+                    <caption>Duration (ms)</caption>
+                    <description>How long the auto draw animation takes.</description>
+                </property>
+                <property key="autoDrawEasing" type="string" defaultValue="ease">
+                    <caption>Easing</caption>
+                    <description>Any CSS transition timing function, for example linear, ease, ease-in, ease-out, ease-in-out or cubic-bezier(0.65, 0, 0.35, 1).</description>
+                </property>
+                <property key="redrawOnChange" type="boolean" defaultValue="false">
+                    <caption>Redraw on data change</caption>
+                    <description>Play the auto draw animation again every time the data changes, for example after a refresh.</description>
+                </property>
+            </propertyGroup>
         </propertyGroup>
         <propertyGroup caption="Stroke/Smoothing">
-            <property key="strokeWidth" type="decimal" defaultValue="1.1">
-                <caption>Stroke</caption>
-                <description>To change the default line thickness.</description>
-            </property>
-            <property key="strokeLineCap" type="enumeration" defaultValue="butt">
-                <caption>Line Cap</caption>
-                <description>To control the edges of your line.</description>
-                <enumerationValues>
-                    <enumerationValue key="butt">butt</enumerationValue>
-                    <enumerationValue key="round">round</enumerationValue>
-                    <enumerationValue key="square">square</enumerationValue>
-                </enumerationValues>
-            </property>
-            <property key="smooth" type="boolean" defaultValue="false">
-                <caption>Smooth</caption>
-                <description>Smooth allows the peaks to be 'rounded' out so that the line has no jagged edges. By tweaking the radius prop, you can use this as a subtle prop to tone down the sharpness, or you can set a very high radius to create a snake-like line.</description>
-            </property>
-            <property key="radius" type="integer" defaultValue="8">
-                <caption>Radius</caption>
-                <description>When using smoothing, you may wish to control the amount of curve around each point. For example, a 0 radius is equivalent to not having any smoothing at all, where an impossibly-large number like 10000 will ensure that each peak is as curved as it can possibly be. This prop has no effect if smooth isn't set to true.</description>
-            </property>
+            <propertyGroup caption="Stroke">
+                <property key="strokeWidth" type="decimal" defaultValue="1.1">
+                    <caption>Stroke width</caption>
+                    <description>The thickness of the line.</description>
+                </property>
+                <property key="strokeLineCap" type="enumeration" defaultValue="butt">
+                    <caption>Line cap</caption>
+                    <description>The shape of the two ends of the line.</description>
+                    <enumerationValues>
+                        <enumerationValue key="butt">Butt</enumerationValue>
+                        <enumerationValue key="round">Round</enumerationValue>
+                        <enumerationValue key="square">Square</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="strokeLineJoin" type="enumeration" defaultValue="miter">
+                    <caption>Line join</caption>
+                    <description>The shape of the corners where line segments meet (visible when smoothing is off).</description>
+                    <enumerationValues>
+                        <enumerationValue key="miter">Miter</enumerationValue>
+                        <enumerationValue key="round">Round</enumerationValue>
+                        <enumerationValue key="bevel">Bevel</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="strokeDasharray" type="string" required="false" defaultValue="">
+                    <caption>Dash pattern</caption>
+                    <description>Draw a dashed line, for example "4 4" or "1 6". Leave empty for a solid line. Do not combine with auto draw, which uses the dash pattern for its animation.</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Smoothing">
+                <property key="smooth" type="boolean" defaultValue="false">
+                    <caption>Smooth</caption>
+                    <description>Round out the peaks so the line has no jagged edges.</description>
+                </property>
+                <property key="radius" type="integer" defaultValue="8">
+                    <caption>Radius</caption>
+                    <description>The amount of curve around each point. 0 means no smoothing; a very large number such as 10000 makes each peak as round as possible.</description>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+        <propertyGroup caption="Accessibility">
+            <propertyGroup caption="Accessibility">
+                <property key="ariaLabel" type="textTemplate" required="false">
+                    <caption>Description</caption>
+                    <description>Text read by screen readers, for example "Revenue over the last 12 months, trending up". Leave empty to hide the chart from screen readers.</description>
+                </property>
+            </propertyGroup>
         </propertyGroup>
     </properties>
 </widget>
-
-

@@ -1,100 +1,101 @@
-/**
- * @typedef Property
- * @type {object}
- * @property {string} key
- * @property {string} caption
- * @property {string} description
- * @property {string[]} objectHeaders
- * @property {ObjectProperties[]} objects
- * @property {Properties[]} properties
- */
+import { isValidEasing } from "./components/trend.helpers";
+
+// A gradient only counts from two colors; with one color the line color is used.
+const hasGradient = values => Boolean(values.gradientObject && values.gradientObject.length > 1);
 
 /**
- * @typedef ObjectProperties
- * @type {object}
- * @property {PropertyGroup[]} properties
- * @property {string[]} captions
- */
-
-/**
- * @typedef PropertyGroup
- * @type {object}
- * @property {string} caption
- * @property {PropertyGroup[]} propertyGroups
- * @property {Property[]} properties
- */
-
-/**
- * @typedef Properties
- * @type {PropertyGroup}
- */
-
-/**
- * @typedef Problem
- * @type {object}
- * @property {string} property
- * @property {("error" | "warning" | "deprecation")} severity
- * @property {string} message
- * @property {string} studioMessage
- * @property {string} url
- * @property {string} studioUrl
- */
-
-/**
+ * Hides properties that have no effect with the current configuration.
  * @param {object} values
- * @param {Properties} defaultProperties
- * @param {("web"|"desktop")} target
- * @returns {Properties}
+ * @param {object[]} defaultProperties
+ * @returns {object[]}
  */
-export function getProperties(values, defaultProperties, target) {
-    // Do the values manipulation here to control the visibility of properties in Studio and Studio Pro conditionally.
-    /* Example
-    if (values.myProperty === "custom") {
-        delete defaultProperties.properties.myOtherProperty;
+export function getProperties(values, defaultProperties) {
+    if (!values.autoDraw) {
+        hideProperties(defaultProperties, ["autoDrawDuration", "autoDrawEasing", "redrawOnChange"]);
     }
-    */
+    if (!values.smooth) {
+        hideProperties(defaultProperties, ["radius"]);
+    }
+    if (hasGradient(values)) {
+        hideProperties(defaultProperties, ["stroke"]);
+    }
     return defaultProperties;
 }
 
-// /**
-//  * @param {Object} values
-//  * @returns {Problem[]} returns a list of problems.
-//  */
-// export function check(values) {
-//    /** @type {Problem[]} */
-//    const errors = [];
-//    // Add errors to the above array to throw errors in Studio and Studio Pro.
-//    /* Example
-//    if (values.myProperty !== "custom") {
-//        errors.push({
-//            property: `myProperty`,
-//            message: `The value of 'myProperty' is different of 'custom'.`,
-//            url: "https://github.com/myrepo/mywidget"
-//        });
-//    }
-//    */
-//    return errors;
-// }
+/**
+ * @param {object} values
+ * @returns {object[]} problems shown in Studio Pro
+ */
+export function check(values) {
+    const errors = [];
+    if (values.gradientObject && values.gradientObject.length === 1) {
+        errors.push({
+            property: "gradientObject",
+            severity: "warning",
+            message:
+                "A gradient needs at least two colors. With one color the gradient is ignored and Line color is used."
+        });
+    }
+    if (values.autoDraw && values.strokeDasharray && values.strokeDasharray.trim()) {
+        errors.push({
+            property: "strokeDasharray",
+            severity: "warning",
+            message:
+                "Auto draw uses the dash pattern for its animation, so the dash pattern only shows after the line is drawn."
+        });
+    }
+    if (values.autoDraw && values.autoDrawDuration !== null && values.autoDrawDuration <= 0) {
+        errors.push({ property: "autoDrawDuration", message: "Duration must be greater than 0." });
+    }
+    if (values.autoDraw && values.autoDrawEasing && !isValidEasing(values.autoDrawEasing)) {
+        errors.push({
+            property: "autoDrawEasing",
+            message:
+                "Use a CSS easing function: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(x1, y1, x2, y2), steps(n) or linear(...)."
+        });
+    }
+    if (values.strokeWidth !== null && Number(values.strokeWidth) <= 0) {
+        errors.push({
+            property: "strokeWidth",
+            message: "Stroke width must be greater than 0, or the line is invisible."
+        });
+    }
+    if (values.strokeOpacity !== null && (Number(values.strokeOpacity) < 0 || Number(values.strokeOpacity) > 1)) {
+        errors.push({ property: "strokeOpacity", message: "Opacity must be between 0 and 1." });
+    }
+    ["width", "height", "padding", "radius"].forEach(key => {
+        if (values[key] !== null && values[key] < 0) {
+            errors.push({ property: key, message: "This value cannot be negative." });
+        }
+    });
+    return errors;
+}
 
-// /**
-//  * @param {object} values
-//  * @param {boolean} isDarkMode
-//  * @param {number[]} version
-//  * @returns {object}
-//  */
-// export function getPreview(values, isDarkMode, version) {
-//     // Customize your pluggable widget appearance for Studio Pro.
-//     return {
-//         type: "Container",
-//         children: []
-//     };
-// }
+/**
+ * @param {object} values
+ * @returns {string}
+ */
+export function getCustomCaption(values) {
+    const parts = ["Trend"];
+    if (values.smooth) {
+        parts.push("smooth");
+    }
+    if (values.autoDraw) {
+        parts.push("auto draw");
+    }
+    if (hasGradient(values)) {
+        parts.push("gradient");
+    }
+    return parts.join(", ");
+}
 
-// /**
-//  * @param {Object} values
-//  * @param {("web"|"desktop")} platform
-//  * @returns {string}
-//  */
-// export function getCustomCaption(values, platform) {
-//     return "MendixReactTrend";
-// }
+function hideProperties(groups, keys) {
+    groups.forEach(group => {
+        if (group.properties) {
+            group.properties = group.properties.filter(property => !keys.includes(property.key));
+        }
+        if (group.propertyGroups) {
+            hideProperties(group.propertyGroups, keys);
+        }
+    });
+}
