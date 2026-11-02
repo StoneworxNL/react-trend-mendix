@@ -1,8 +1,8 @@
 import { createElement } from "react";
 import classNames from "classnames";
-import Trend from "react-trend";
+import { Trend } from "./Trend";
 
-// Turns widget property values into react-trend props. Shared by the runtime widget and the Studio Pro preview.
+// Turns widget property values into Trend props. Shared by the runtime widget and the Studio Pro preview.
 export function ReactTrendComponent({
     className,
     style,
@@ -30,7 +30,7 @@ export function ReactTrendComponent({
         ? { role: "img", "aria-label": ariaLabel }
         : { "aria-hidden": true, focusable: "false" };
 
-    // react-trend needs at least two points to draw a line.
+    // A line needs at least two points.
     if (!data || data.length < 2) {
         return (
             <div className={classNames("widget-react-trend", "widget-react-trend--empty", className)} style={style} />
@@ -42,8 +42,8 @@ export function ReactTrendComponent({
             <Trend
                 key={autoDraw ? redrawKey : undefined}
                 data={data}
-                // An empty gradient renders an invisible line, so only pass it when colors are set.
-                gradient={colors.length > 0 ? colors : undefined}
+                // A gradient needs two colors; with fewer the line color is used.
+                gradient={colors.length > 1 ? colors : undefined}
                 stroke={stroke && stroke.trim() ? stroke.trim() : "currentColor"}
                 strokeOpacity={toNumber(strokeOpacity, 1)}
                 width={positive(width)}
@@ -52,12 +52,12 @@ export function ReactTrendComponent({
                 autoDraw={autoDraw}
                 autoDrawDuration={toNumber(autoDrawDuration, 2000)}
                 autoDrawEasing={autoDrawEasing || "ease"}
-                strokeWidth={toNumber(strokeWidth, 1)}
+                strokeWidth={toNumber(strokeWidth, 1.1)}
                 strokeLinecap={strokeLineCap}
                 strokeLinejoin={strokeLineJoin}
                 strokeDasharray={strokeDasharray && strokeDasharray.trim() ? strokeDasharray.trim() : undefined}
                 smooth={smooth}
-                radius={toNumber(radius, 10)}
+                radius={toNumber(radius, 8)}
                 {...a11yProps}
             />
         </div>

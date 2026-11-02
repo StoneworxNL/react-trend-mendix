@@ -8,7 +8,7 @@ Quoting the [Unsplash's README](https://github.com/unsplash/react-trend?tab=read
 Now, it is possible to easily build these simple trend graphs (similar to the ones shown by Github, for instance) in your Mendix application.
 
 ## Features
-Easily show trending charts. Every option of react-trend is available:
+Easily show trending charts. Every option of react-trend is available, in a small built-in rewrite of the library with no extra dependencies:
 
 *   **Data:** any list data source, with a Decimal, Integer or Long attribute. Empty values are skipped.
 *   **Color:** a solid line color (any CSS color, or the current text color when empty), a vertical gradient of two or more colors, and the line opacity.
@@ -19,6 +19,10 @@ Easily show trending charts. Every option of react-trend is available:
 *   **Accessibility:** a description that screen readers announce; without it the line is hidden from screen readers.
 *   **Studio Pro:** a design mode preview of the line, and properties that hide when they have no effect.
 
+
+## Requirements
+*   Mendix 11 or newer (the widget is built with the Mendix 11 widget tools and React 19). Use version 1.0.x on earlier Mendix versions.
+*   Version 1.1.0 changes how values are read; see the [CHANGELOG](CHANGELOG.md) before upgrading.
 
 ## Usage
 Feel free to check the [demo (.mpk)](https://github.com/StoneworxNL/react-trend-mendix/tree/main/demo) for a better understanding.

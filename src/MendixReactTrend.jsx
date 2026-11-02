@@ -25,7 +25,9 @@ export function MendixReactTrend({
     radius,
     ariaLabel
 }) {
-    const items = trendList && trendList.status === "available" ? trendList.items : undefined;
+    // While a reload is "loading" Mendix keeps the previous items; keep showing them so the chart
+    // does not blank out and replay its animation on every refresh.
+    const items = trendList && trendList.status !== "unavailable" ? trendList.items : undefined;
 
     const data = useMemo(() => {
         if (!items || !trendValue) {

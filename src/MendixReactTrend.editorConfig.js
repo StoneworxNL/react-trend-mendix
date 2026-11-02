@@ -1,3 +1,8 @@
+import { isValidEasing } from "./components/trend.helpers";
+
+// A gradient only counts from two colors; with one color the line color is used.
+const hasGradient = values => Boolean(values.gradientObject && values.gradientObject.length > 1);
+
 /**
  * Hides properties that have no effect with the current configuration.
  * @param {object} values
@@ -11,7 +16,7 @@ export function getProperties(values, defaultProperties) {
     if (!values.smooth) {
         hideProperties(defaultProperties, ["radius"]);
     }
-    if (values.gradientObject && values.gradientObject.length > 0) {
+    if (hasGradient(values)) {
         hideProperties(defaultProperties, ["stroke"]);
     }
     return defaultProperties;
@@ -27,7 +32,8 @@ export function check(values) {
         errors.push({
             property: "gradientObject",
             severity: "warning",
-            message: "A gradient needs at least two colors. With one color, use Line color instead."
+            message:
+                "A gradient needs at least two colors. With one color the gradient is ignored and Line color is used."
         });
     }
     if (values.autoDraw && values.strokeDasharray && values.strokeDasharray.trim()) {
@@ -40,6 +46,19 @@ export function check(values) {
     }
     if (values.autoDraw && values.autoDrawDuration !== null && values.autoDrawDuration <= 0) {
         errors.push({ property: "autoDrawDuration", message: "Duration must be greater than 0." });
+    }
+    if (values.autoDraw && values.autoDrawEasing && !isValidEasing(values.autoDrawEasing)) {
+        errors.push({
+            property: "autoDrawEasing",
+            message:
+                "Use a CSS easing function: linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(x1, y1, x2, y2), steps(n) or linear(...)."
+        });
+    }
+    if (values.strokeWidth !== null && Number(values.strokeWidth) <= 0) {
+        errors.push({
+            property: "strokeWidth",
+            message: "Stroke width must be greater than 0, or the line is invisible."
+        });
     }
     if (values.strokeOpacity !== null && (Number(values.strokeOpacity) < 0 || Number(values.strokeOpacity) > 1)) {
         errors.push({ property: "strokeOpacity", message: "Opacity must be between 0 and 1." });
@@ -64,7 +83,7 @@ export function getCustomCaption(values) {
     if (values.autoDraw) {
         parts.push("auto draw");
     }
-    if (values.gradientObject && values.gradientObject.length > 1) {
+    if (hasGradient(values)) {
         parts.push("gradient");
     }
     return parts.join(", ");
